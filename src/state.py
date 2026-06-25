@@ -1,6 +1,19 @@
-from typing import TypedDict
+from typing import NotRequired, TypedDict
 
-class AgentState(TypedDict, total=False):
+class AgentState(TypedDict):
+    issue_url: str
+
+    owner: NotRequired[str]
+    repo: NotRequired[str]
+    issue_number: NotRequired[int]
+    issue_title: NotRequired[str]
+    issue_body: NotRequired[str]
+
+    implementation_plan: NotRequired[str]
+    error: NotRequired[str]
+
+
+class AgentStateUpdate(TypedDict, total=False):
     issue_url: str
 
     owner: str
@@ -11,4 +24,3 @@ class AgentState(TypedDict, total=False):
 
     implementation_plan: str
     error: str
-    
